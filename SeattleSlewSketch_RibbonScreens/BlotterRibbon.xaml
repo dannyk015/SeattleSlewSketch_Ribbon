@@ -1,0 +1,443 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:r="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity" 
+	x:Name="MainWindow"
+	mc:Ignorable="d"
+	x:Class="SeattleSlewSketch_RibbonScreens.BlotterRibbon"
+	Width="Auto" Height="Auto">
+
+	<Grid x:Name="LayoutRoot" Background="White">
+		<r:Ribbon FontFamily="/SeattleSlewSketch_Ribbon.Screens;component/Fonts/#Apex Rounded Book" >
+			<r:Ribbon.QuickAccessToolBar>
+				<r:RibbonQuickAccessToolBar>
+					<r:RibbonButton x:Name="QATSave" SmallImageSource="Resources/save_32.png" />
+					<r:RibbonButton x:Name="QATUndo" SmallImageSource="Resources/undo.png" />
+					<r:RibbonButton x:Name="QATRedo" SmallImageSource="Resources/redo.png" />
+				</r:RibbonQuickAccessToolBar>
+			</r:Ribbon.QuickAccessToolBar>
+			<r:Ribbon.ApplicationMenu>
+				<r:RibbonApplicationMenu>
+					<r:RibbonApplicationMenuItem Header="New" ImageSource="Resources/new_32.png">
+						<r:RibbonApplicationMenuItem Header="Template" >
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Create_Template" />
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+						</r:RibbonApplicationMenuItem>
+						<r:RibbonApplicationMenuItem Header="Portfolio from Template">
+							<r:RibbonApplicationMenuItem Header="Case Account">
+								<i:Interaction.Triggers>
+									<i:EventTrigger EventName="Click">
+										<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Create_Portfolio_Template"/>
+									</i:EventTrigger>
+								</i:Interaction.Triggers>
+							</r:RibbonApplicationMenuItem>
+						</r:RibbonApplicationMenuItem>
+						<r:RibbonApplicationMenuItem Header="Portfolio">
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Create_Portfolio"/>
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+						</r:RibbonApplicationMenuItem>
+						<r:RibbonApplicationMenuItem Header="Group" >
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Create_Group" />
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+						</r:RibbonApplicationMenuItem>
+						<r:RibbonApplicationMenuItem Header="Composite" >
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Create_Composite" />
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+						</r:RibbonApplicationMenuItem>
+						<r:RibbonApplicationMenuItem Header="Performance (Net of Fees)" >
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Create_Net_Performance" />
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+						</r:RibbonApplicationMenuItem>
+						<r:RibbonApplicationMenuItem Header="Performance (Gross of Fees)" >
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Create_Gross_Performance" />
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+						</r:RibbonApplicationMenuItem>
+						<r:RibbonApplicationMenuItem Header="Index" />
+						<r:RibbonApplicationMenuItem Header="Price" />
+						<r:RibbonApplicationMenuItem Header="Spot Rate" />
+						<r:RibbonApplicationMenuItem Header="Forward Fx Rate" />
+						<r:RibbonApplicationMenuItem Header="Factor" />
+						<r:RibbonApplicationMenuItem Header="Reset Rate" />
+						<r:RibbonApplicationMenuItem Header="Base Rate" />
+						<r:RibbonApplicationMenuItem Header="Coupon Date" />
+						<r:RibbonApplicationMenuItem Header="Region" />
+						<r:RibbonApplicationMenuItem Header="Added Security Data - Number" />
+						<r:RibbonApplicationMenuItem Header="Added Security Data - String" />
+						<r:RibbonApplicationMenuItem Header="Added Security Data - Date" />
+					</r:RibbonApplicationMenuItem>
+					<r:RibbonApplicationMenuItem Header="Open" ImageSource="Resources/open_32.png" >
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.File_Open"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</r:RibbonApplicationMenuItem>
+					<r:RibbonApplicationMenuItem Header="Close" ImageSource="Resources/close_32.PNG">
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Start_1" />
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</r:RibbonApplicationMenuItem>
+					<r:RibbonApplicationMenuItem Header="Save" ImageSource="Resources/save_32.png" />
+					<r:RibbonApplicationMenuItem Header="Save As" ImageSource="Resources/save_as_32.png" />
+					<r:RibbonApplicationMenuItem Header="Info">
+						<r:RibbonApplicationMenuItem Header="User Settings" ImageSource="Resources/options_32.PNG">
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.System_Settings"/>
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+						</r:RibbonApplicationMenuItem>
+						<r:RibbonApplicationMenuItem Header="Global Settings" ImageSource="Resources/options_32.PNG">
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Network_Settings"/>
+								</i:EventTrigger>
+							</i:Interaction.Triggers>						
+						</r:RibbonApplicationMenuItem>
+						<r:RibbonApplicationMenuItem Header="User Administration" ImageSource="Resources/options_32.PNG">
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.User_Administration"/>
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+						</r:RibbonApplicationMenuItem>
+					</r:RibbonApplicationMenuItem>
+					<r:RibbonApplicationMenuItem Header="Recent">
+						<r:RibbonApplicationMenuItem Header="case.cli" ImageSource="Resources/cli.png">
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Portfolio" />
+								</i:EventTrigger>
+							</i:Interaction.Triggers>							
+						</r:RibbonApplicationMenuItem>
+						<r:RibbonApplicationMenuItem Header="case.prf" ImageSource="Resources/performance.png">
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Net_Performance" />
+								</i:EventTrigger>
+							</i:Interaction.Triggers>							
+						</r:RibbonApplicationMenuItem>
+						<r:RibbonApplicationMenuItem Header="case.pbf" ImageSource="Resources/performance_gross.png">
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Gross_Performance" />
+								</i:EventTrigger>
+							</i:Interaction.Triggers>							
+						</r:RibbonApplicationMenuItem>
+					</r:RibbonApplicationMenuItem>
+					<r:RibbonApplicationMenuItem Header="Print" ImageSource="Resources/print_32.PNG">
+						<r:RibbonApplicationMenuItem Header="Print" ImageSource="Resources/print_32.PNG" />
+						<r:RibbonApplicationMenuItem Header="Print Preview" ImageSource="Resources/print_preview_32.png" />
+						<r:RibbonApplicationMenuItem Header="Print Setup" ImageSource="Resources/print_setup_32.png" />
+						<r:RibbonApplicationMenuItem Header="Page Setup" ImageSource="Resources/page_setup_32.png" />
+					</r:RibbonApplicationMenuItem>
+					<r:RibbonApplicationMenuItem Header="Help"/>
+					<r:RibbonApplicationMenuItem Header="Options" ImageSource="Resources/options_32.png" >
+						<r:RibbonApplicationMenuItem Header="Application Options" >
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Options_Dialog" />
+								</i:EventTrigger>
+							</i:Interaction.Triggers>														
+						</r:RibbonApplicationMenuItem>
+						<r:RibbonApplicationMenuItem Header="Edit Custom Report Menu" >
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.CustomReportsMenu" />
+								</i:EventTrigger>
+							</i:Interaction.Triggers>														
+						</r:RibbonApplicationMenuItem>
+						<r:RibbonApplicationMenuItem Header="Edit Script File Menu" >
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Scripts" />
+								</i:EventTrigger>
+							</i:Interaction.Triggers>							
+						</r:RibbonApplicationMenuItem>
+					</r:RibbonApplicationMenuItem>
+					<r:RibbonApplicationMenuItem Header="Exit" ImageSource="Resources/close_32.PNG" />
+				</r:RibbonApplicationMenu>
+			</r:Ribbon.ApplicationMenu>
+			<r:RibbonTab Header="HOME">
+				<r:RibbonGroup Header="Clipboard">
+					<r:RibbonButton Label="Paste" LargeImageSource="Resources/paste_32.PNG" />
+					<r:RibbonButton Label="Cut" SmallImageSource="Resources/cut.png"/>
+					<r:RibbonButton Label="Copy" SmallImageSource="Resources/copy.png"/>
+				</r:RibbonGroup>
+				<r:RibbonGroup Header="Editing">
+					<r:RibbonSplitButton Label="Find" LargeImageSource="Resources/find_32.PNG">
+						<r:RibbonButton Label="Go To" SmallImageSource="Resources/go_to.png"/>
+					</r:RibbonSplitButton>
+					<r:RibbonButton Label="Replace" SmallImageSource="Resources/replace.png"/>
+					<r:RibbonButton Label="Select All" SmallImageSource="Resources/select_all_32.png"/>
+					<r:RibbonButton Label="Validate" SmallImageSource="Resources/validate.png"/>
+					<r:RibbonButton Label="Delete Line" SmallImageSource="Resources/delete.png"/>
+					<r:RibbonButton Label="Insert Line" SmallImageSource="Resources/insert_32.PNG"/>
+					<r:RibbonButton Label="Restore Line" SmallImageSource="Resources/restore.png"/>
+				</r:RibbonGroup>
+			<r:RibbonGroup Header="Portfolio">
+					<r:RibbonButton Label="Portfolios" LargeImageSource="Resources/portfolio_128.PNG" >
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Portfolio"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</r:RibbonButton>
+					<r:RibbonButton Label="Groups" SmallImageSource="Resources/groups.png" >
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Group"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</r:RibbonButton>
+					<r:RibbonButton Label="Composites" SmallImageSource="Resources/composites.png" >
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Composite"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</r:RibbonButton>
+					<r:RibbonButton Label="Statement" SmallImageSource="Resources/statement.png" />
+				</r:RibbonGroup>
+				<r:RibbonGroup Header="Blotter">
+					<r:RibbonButton Label="Edit Trade Blotter" LargeImageSource="Resources/edit_trade_blotter_32.png" >
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Blotter"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</r:RibbonButton>
+					<r:RibbonButton Label="Post Trade Blotter" LargeImageSource="Resources/post_trade_blotter_32.png" />
+					<r:RibbonSplitButton Label="Audit Trail" LargeImageSource="Resources/audit_trail_32.png" >
+						<r:RibbonSplitMenuItem Header="Review Deleted Transactions" />	
+					</r:RibbonSplitButton>					
+				</r:RibbonGroup>
+				<r:RibbonGroup Header="Performance">
+					<r:RibbonButton Label="Performance (Net)" SmallImageSource="Resources/performance.png"/>
+					<r:RibbonButton Label="Performance (Gross)" SmallImageSource="Resources/performance_gross.png"/>
+					<r:RibbonButton Label="Index" SmallImageSource="Resources/index.png" />
+				</r:RibbonGroup>
+				<r:RibbonGroup Header="Market Data">
+					<r:RibbonButton Label="Prices" LargeImageSource="Resources/price_32.PNG" />
+					<r:RibbonSplitButton Label="FX" LargeImageSource="Resources/fx_32.png">
+						<r:RibbonSplitMenuItem Header="Forward FX Rates" ImageSource="Resources/fx_32.png"/>
+					</r:RibbonSplitButton>
+					<r:RibbonMenuButton Label="Rates" SmallImageSource="Resources/rate.png">
+						<r:RibbonMenuItem Header="Base Rates" ImageSource="Resources/rate.png"/>
+						<r:RibbonMenuItem Header="Reset Rates" ImageSource="Resources/rate.png"/>
+						<r:RibbonMenuItem Header="Coupon Dates" ImageSource="Resources/rate.png"/>						
+					</r:RibbonMenuButton>
+					<r:RibbonButton Label="Factors" SmallImageSource="Resources/factors.png"/>
+				</r:RibbonGroup>
+			</r:RibbonTab>
+			<r:RibbonTab Header="INFORMATION">
+				<r:RibbonGroup Header="Security">
+					<r:RibbonButton Label="Securities" LargeImageSource="Resources/security_32.png" >
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Securities"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</r:RibbonButton>
+					<r:RibbonButton Label="Security Type" LargeImageSource="Resources/security_type_32.png" >
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Security_Type"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</r:RibbonButton>
+					<r:RibbonMenuButton Label="Reference" LargeImageSource="Resources/classification_32.png" >
+						<r:RibbonMenuItem Header="Asset Class"/>
+						<r:RibbonMenuItem Header="Industry Group"/>
+						<r:RibbonMenuItem Header="Industry Sector"/>
+						<r:RibbonMenuItem Header="Security Type Group"/>
+						<r:RibbonMenuItem Header="Split"/>
+					</r:RibbonMenuButton>
+				</r:RibbonGroup>
+				<r:RibbonGroup Header="Regional">
+					<r:RibbonButton Label="Currency" SmallImageSource="Resources/currency.png" />
+					<r:RibbonButton Label="Country" SmallImageSource="Resources/country.png" />
+					<r:RibbonButton Label="Withholding Tax" />
+					<r:RibbonButton Label="State" SmallImageSource="Resources/state.png" />
+					<r:RibbonButton Label="Holiday" SmallImageSource="Resources/holiday.png" />
+					<r:RibbonButton Label="Holiday Schedule" SmallImageSource="Resources/holiday_schedule.PNG" />
+				</r:RibbonGroup>
+				<r:RibbonGroup Header="Reference">
+					<r:RibbonButton Label="Exchange" SmallImageSource="Resources/exchange.png" />
+					<r:RibbonButton Label="Lot Location" SmallImageSource="Resources/lot_location.PNG" />
+					<r:RibbonButton Label="Brokerage" SmallImageSource="Resources/brokerage.png" />
+					<r:RibbonButton Label="Commission Purpose" SmallImageSource="Resources/commission_purpose.png" />
+					<r:RibbonButton Label="Strategy" SmallImageSource="Resources/strategy.png" />
+					<r:RibbonMenuButton Label="Bond" SmallImageSource="Resources/bond.png">
+						<r:RibbonMenuItem Header="Bond Revenue Source" />
+						<r:RibbonMenuItem Header="Bond Insurer" />
+					</r:RibbonMenuButton>
+				</r:RibbonGroup>
+			</r:RibbonTab>
+			<r:RibbonTab Header="INTERFACE">
+				<r:RibbonGroup>
+				<r:RibbonMenuButton Label="Moxy" LargeImageSource="Resources/moxy_32.png">
+					<r:RibbonMenuItem Header="Edit Moxy Trade Blotter"/>
+					<r:RibbonMenuItem Header="Post Moxy Trade Blotter"/>
+					<r:RibbonMenuItem Header="Moxy Trade Reconciliation"/>
+				</r:RibbonMenuButton>
+				</r:RibbonGroup>
+				<r:RibbonGroup>
+					<r:RibbonButton Label="Interactive Data" LargeImageSource="Resources/scripts_32.png" />
+					<r:RibbonButton Label="Advent Corporate Actions" LargeImageSource="Resources/scripts_32.png" />
+					<r:RibbonMenuButton Label="Script Files" LargeImageSource="Resources/scripts_32.png">
+						<r:RibbonMenuItem Header="Script 1" />
+						<r:RibbonMenuItem Header="Script 2" />
+						<r:RibbonMenuItem Header="Script 3" />
+						<r:RibbonMenuItem Header="Script 4" />
+					</r:RibbonMenuButton>
+				</r:RibbonGroup>
+				<r:RibbonGroup>
+					<r:RibbonButton Label="Dataport" LargeImageSource="Resources/scripts_32.png" />
+				</r:RibbonGroup>
+			</r:RibbonTab>
+			<r:RibbonTab Header="REPORTS">
+				<r:RibbonGroup Header="Reports">
+					<r:RibbonMenuButton Label="Portfolio" LargeImageSource="Resources/report_styles_32.PNG" >
+						<r:RibbonMenuItem Header="Appraisal">
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Report"/>
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+						</r:RibbonMenuItem>
+					</r:RibbonMenuButton>
+					<r:RibbonMenuButton Label="Management" LargeImageSource="Resources/report_styles_32.PNG" />
+					<r:RibbonMenuButton Label="Fixed" LargeImageSource="Resources/report_styles_32.PNG" />
+					<r:RibbonMenuButton Label="Performance" LargeImageSource="Resources/report_styles_32.PNG" />
+					<r:RibbonMenuButton Label="Custom" LargeImageSource="Resources/report_styles_32.PNG" >
+						<r:RibbonMenuItem Header="Custom Report 1"/>
+						<r:RibbonMenuItem Header="Custom Report 2"/>
+						<r:RibbonMenuItem Header="Custom Report 3"/>
+					</r:RibbonMenuButton>
+				</r:RibbonGroup>
+				<r:RibbonGroup>
+				<r:RibbonMenuButton Label="Macro" LargeImageSource="Resources/macro_32.PNG" >
+					<r:RibbonMenuItem Header="Run..." />
+					<r:RibbonMenuItem Header="Run Last" />
+					<r:RibbonSeparator />
+					<r:RibbonMenuItem Header="New" />
+					<r:RibbonMenuItem Header="Open" >
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Macro"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</r:RibbonMenuItem>
+				</r:RibbonMenuButton>
+				<r:RibbonButton Label="Edit Report Styles" LargeImageSource="Resources/report_styles_32.PNG" />
+				</r:RibbonGroup>
+			</r:RibbonTab>
+			<r:RibbonTab Header="DATA">
+				<r:RibbonGroup Header="Import/Export">
+					<r:RibbonButton Label="Import" LargeImageSource="Resources/import_32.png" />
+					<r:RibbonButton Label="Export" LargeImageSource="Resources/export_32.png" />
+				</r:RibbonGroup>
+				<r:RibbonGroup Header="Management">
+					<r:RibbonMenuButton Label="Delete" LargeImageSource="Resources/delete_32.png" >
+						<r:RibbonMenuItem Header="Delete Portfolio"/>
+						<r:RibbonMenuItem Header="Delete Group"/>
+						<r:RibbonMenuItem Header="Delete Composite"/>
+						<r:RibbonMenuItem Header="Delete Price"/>
+						<r:RibbonMenuItem Header="Delete Labels"/>
+					</r:RibbonMenuButton>					<r:RibbonMenuButton Label="Merge" SmallImageSource="Resources/merge.png">
+						<r:RibbonMenuItem Header="Merge Portfolios"/>
+						<r:RibbonMenuItem Header="Merge Prices"/>
+					</r:RibbonMenuButton>
+					<r:RibbonMenuButton Label="Condense" SmallImageSource="Resources/condense.PNG">
+						<r:RibbonMenuItem Header="Condense Portfolios"/>
+						<r:RibbonMenuItem Header="Condense Security Info"/>
+					</r:RibbonMenuButton>
+					<r:RibbonMenuButton Label="Rename" SmallImageSource="Resources/rename_32.png" >
+						<r:RibbonMenuItem Header="Rename Portfolio"/>
+						<r:RibbonMenuItem Header="Rename Group"/>
+						<r:RibbonMenuItem Header="Rename Composite"/>
+					</r:RibbonMenuButton>
+					<r:RibbonMenuButton Label="Edit Pricing Symbol" SmallImageSource="Resources/edit_price_symbol.png">
+						<r:RibbonMenuItem Header="1"/>
+						<r:RibbonMenuItem Header="2"/>
+						<r:RibbonMenuItem Header="3"/>
+					</r:RibbonMenuButton>
+					<r:RibbonMenuButton Label="Edit Transaction User Defined" SmallImageSource="Resources/edit_transaction_user_defined.png">
+						<r:RibbonMenuItem Header="1"/>
+						<r:RibbonMenuItem Header="2"/>
+						<r:RibbonMenuItem Header="3"/>
+					</r:RibbonMenuButton>
+					<r:RibbonMenuButton Label="Edit Security User Defined" SmallImageSource="Resources/edit_security_user_defined.png">
+						<r:RibbonMenuItem Header="1"/>
+						<r:RibbonMenuItem Header="2"/>
+						<r:RibbonMenuItem Header="3"/>
+					</r:RibbonMenuButton>
+				</r:RibbonGroup>
+				<r:RibbonGroup Header="Utility">
+					<r:RibbonButton Label="List Missing Data" LargeImageSource="Resources/list_missing_data.PNG" />
+					<r:RibbonButton Label="Create Reorg. Transactions" LargeImageSource="Resources/create_reeorg_transactions.png" />
+					<r:RibbonMenuButton Label="Symbols" SmallImageSource="Resources/symbol.png">
+						<r:RibbonMenuItem Header="Change Symbols"/>
+						<r:RibbonMenuItem Header="Undefined Symbols"/>
+					</r:RibbonMenuButton>
+					<r:RibbonMenuButton Label="Labels" SmallImageSource="Resources/label.PNG">
+						<r:RibbonMenuItem Header="Add Labels"/>
+						<r:RibbonMenuItem Header="Change Labels"/>
+						<r:RibbonMenuItem Header="Delete Labels"/>
+					</r:RibbonMenuButton>
+					<r:RibbonMenuButton Label="Portfolio/Group" SmallImageSource="Resources/portfolio_group.PNG">
+						<r:RibbonMenuItem Header="Add/Remove Portfolio/Group"/>
+						<r:RibbonMenuItem Header="Group Membership"/>
+						<r:RibbonMenuItem Header="Portfolio Group/Sort"/>
+					</r:RibbonMenuButton>
+				</r:RibbonGroup>
+			</r:RibbonTab>
+			<r:RibbonTab Header="VIEW">
+				<r:RibbonGroup Header="View">
+					<r:RibbonButton Label="Zoom In" LargeImageSource="Resources/zoom_detail.PNG" />
+					<r:RibbonButton Label="Options" LargeImageSource="Resources/options_32.PNG"/>
+					<r:RibbonButton Label="Font" LargeImageSource="Resources/font_32.png"/>
+				</r:RibbonGroup>
+			</r:RibbonTab>
+			<r:RibbonTab Header="Blotter" IsSelected="True">
+				<r:RibbonGroup Header="Options">
+					<r:RibbonButton Label="Post/Hold" LargeImageSource="Resources/post_hold_32.PNG" />
+					<r:RibbonButton Label="Tran Code Case" LargeImageSource="Resources/font_32.png" />
+				</r:RibbonGroup>
+				<r:RibbonGroup Header="Close">
+					<r:RibbonButton Label="Close Blotter" LargeImageSource="Resources/close_32.PNG" >
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Start_1"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</r:RibbonButton>
+				</r:RibbonGroup>
+			</r:RibbonTab>
+		</r:Ribbon>
+	</Grid>
+</UserControl>

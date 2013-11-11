@@ -1,0 +1,57 @@
+﻿<Application
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:nav="NavigationPane"
+	x:Class="SeattleSlewSketch_Ribbon.App">
+	<Application.Resources>
+		<!-- Resources scoped at the Application level should be defined here. -->
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Microsoft.Expression.Prototyping.SketchControls;component/ScrollViewerStyles.xaml"/>
+				<ResourceDictionary Source="/SeattleSlewSketch_Ribbon.Screens;component/SketchStyles.xaml"/>
+				<ResourceDictionary Source="/SeattleSlewSketch_Ribbon.Screens;component/Simple Styles.xaml"/>
+				<ResourceDictionary Source="/SeattleSlewSketch_Ribbon.Screens;component/ProjectDataSources.xaml"/>
+				<ResourceDictionary Source="/SeattleSlewSketch_Ribbon.Screens;component/SeattleSlewStyles.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			<DataTemplate x:Key="rowTemplate">
+				<StackPanel>
+					<TextBlock Text="{Binding AccrualCalendarCode}"/>
+					<TextBlock Text="{Binding AmortizationMethodCode}"/>
+					<TextBlock Text="{Binding AmortizeToCode}"/>
+					<TextBlock Text="{Binding CanBeBoughtSold}"/>
+					<TextBlock Text="{Binding CanMature}"/>
+					<TextBlock Text="{Binding CanReinvestDividend}"/>
+					<TextBlock Text="{Binding CanSplit}"/>
+					<TextBlock Text="{Binding CouponDelayDays}"/>
+					<TextBlock Text="{Binding Description}"/>
+					<TextBlock Text="{Binding EnterYieldOnCost}"/>
+					<TextBlock Text="{Binding HoldingPeriod}"/>
+					<TextBlock Text="{Binding IncomeCurrencyCode}"/>
+					<TextBlock Text="{Binding IncomeTypeCode}"/>
+					<TextBlock Text="{Binding IsFFX}"/>
+					<TextBlock Text="{Binding IsLongZeroMV}"/>
+					<TextBlock Text="{Binding IsUnsupervised}"/>
+					<TextBlock Text="{Binding IsVRS}"/>
+					<TextBlock Text="{Binding IsZeroCoupon}"/>
+					<TextBlock Text="{Binding LongAssetClassCode}"/>
+					<TextBlock Text="{Binding LongGainClassificationCode}"/>
+					<TextBlock Text="{Binding PaymentFrequencyID}"/>
+					<TextBlock Text="{Binding PayOnMonthEnd}"/>
+					<TextBlock Text="{Binding QuantityCalculationPrec}"/>
+					<TextBlock Text="{Binding QuantityDisplayPrec}"/>
+					<TextBlock Text="{Binding RiskCountryCode}"/>
+					<TextBlock Text="{Binding SecTypeGroupID}"/>
+					<TextBlock Text="{Binding SettlementLagDays}"/>
+					<TextBlock Text="{Binding ShortVar}"/>
+					<TextBlock Text="{Binding SubjectToFederalTax}"/>
+					<TextBlock Text="{Binding SubjectToStateTax}"/>
+					<TextBlock Text="{Binding TradeWithAI}"/>
+					<TextBlock Text="{Binding Type}"/>
+					<TextBlock Text="{Binding UseAvgCost}"/>
+					<TextBlock Text="{Binding UseSimpleInterestInLastPeriod}"/>
+					<TextBlock Text="{Binding ValuationFactor}"/>
+				</StackPanel>
+			</DataTemplate>
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>

@@ -1,0 +1,301 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:local="clr-namespace:SeattleSlewSketch_RibbonScreens" 
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+	xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity" 
+	xmlns:s="NavigationPane" 
+	xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
+	x:Name="SeattleSlewSketch_RibbonScreens_Blotter_Name"
+	mc:Ignorable="d"
+	x:Class="SeattleSlewSketch_RibbonScreens.Security_Type"
+	Width="1000" Height="600"
+	FontFamily="/SeattleSlewSketch_Ribbon.Screens;component/Fonts/#Apex Rounded Book" >
+
+	<Grid x:Name="LayoutRoot" Background="White" DataContext="{Binding Source={StaticResource SecurityType}}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+		<local:Start HorizontalAlignment="Left" VerticalAlignment="stretch" d:IsPrototypingComposition="True" Grid.RowSpan="2" Grid.Row="1"/>
+		<local:Screen_1 Grid.ColumnSpan="2" d:IsPrototypingComposition="True"/>
+
+		<TextBlock Grid.Column="1" Grid.Row="1" Text="SECURITY TYPE" FontSize="20" FontFamily="/SeattleSlewSketch_Ribbon.Screens;component/Fonts/#Apex Rounded Medium" />
+		<Button Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Width="22" Background="{x:Null}" BorderBrush="White" Foreground="#323232" FontFamily="/SeattleSlewSketch_Ribbon.Screens;component/Fonts/#Apex Rounded Bold">X
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Start_1"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
+		<DataGrid Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="1" AutoGenerateColumns="False" ItemsSource="{Binding Data}">
+			<DataGrid.Columns>
+				<DataGridTextColumn Binding="{Binding Type}" Header="Type"/>
+				<DataGridTextColumn Binding="{Binding Description}" Header="Description"/>
+				<DataGridTextColumn Binding="{Binding CanBeBoughtSold}" Header="Bought Sold"/>
+				<DataGridTextColumn Binding="{Binding CanMature}" Header="Mature"/>
+				<DataGridTextColumn Binding="{Binding CanSplit}" Header="Split"/>
+				<DataGridTextColumn Binding="{Binding IncomeCurrencyCode}" Header="Income Currency"/>
+				<DataGridTextColumn Binding="{Binding IncomeTypeCode}" Header="Income Type"/>
+				<DataGridTextColumn Binding="{Binding LongAssetClassCode}" Header="Asset Class"/>
+			</DataGrid.Columns>
+		</DataGrid>
+
+		<DockPanel Grid.Column="1" Grid.Row="2"	Grid.RowSpan="2" HorizontalAlignment="Right">
+			<s:NavigationPaneExpander x:Name="navigationPaneExpander"
+				Background="#FFF6F9FF"
+				Width="300"				
+				CloseButtonClick="navigationPaneExpander_CloseButtonClick"
+				DockPanel.Dock="Right"
+				Orientation="Right">
+				<s:NavigationPaneExpander.Header>
+					<TextBlock Foreground="Red" Text="Expander Header" />
+				</s:NavigationPaneExpander.Header>
+				<HeaderedContentControl>
+					<HeaderedContentControl.Header>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14"><Run Text="Details" /></TextBlock>
+						</StackPanel>
+					</HeaderedContentControl.Header>
+					<TabControl>
+						<TabItem Header="Basic">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+								<TextBlock Text="Type Code" />
+								<TextBox Text="mfus" Grid.Column="1" Margin="5,0,0,0"/>
+								<TextBlock Text="Type Name" Grid.Row="2" />
+								<TextBox Text="MUTUAL FUNDS" Grid.Row="2" Grid.Column="1" Margin="5,0,0,0"/>
+								<TextBlock Text="Income Type" Grid.Row="3" />
+								<ComboBox Grid.Column="1" Grid.Row="3" Width="75" HorizontalAlignment="Left" Margin="5,0,0,0" >
+									<ComboBoxItem Content="Dividend" IsSelected="True"/>
+									<ComboBoxItem Content="Interest" />
+									<ComboBoxItem Content="None" />
+								</ComboBox>
+								<TextBlock Text="Income Currency" Grid.Row="4" />
+								<ComboBox Grid.Column="1" Grid.Row="4" Width="75" HorizontalAlignment="Left" Margin="5,0,0,0" >
+									<ComboBoxItem Content="US Dollar (us)" IsSelected="True"/>
+									<ComboBoxItem Content="Canadian Dollar (ca)" />
+									<ComboBoxItem Content="Euro (eu)" />
+								</ComboBox>
+
+								<CheckBox Grid.Row="5" Margin="10">Bought/Sold</CheckBox>
+								<CheckBox Grid.Row="5" Grid.Column="1" Margin="10">Matures/Expires</CheckBox>
+								<CheckBox Grid.Row="6" Margin="10">Subject to Splits</CheckBox>
+								<CheckBox Grid.Row="6" Grid.Column="1" Margin="10">Forward Contract</CheckBox>
+
+								<TextBlock Text="Zero Market Value" Grid.Row="7" />
+								<ComboBox Grid.Column="1" Grid.Row="7" Width="150" HorizontalAlignment="Left" Margin="5,0,0,0" >
+									<ComboBoxItem Content="No" IsSelected="True"/>
+									<ComboBoxItem Content="Yes" />
+								</ComboBox>
+								<TextBlock Text="Settlement Lag" Grid.Row="8" />
+								<TextBox Text="3" Grid.Row="8" Grid.Column="1" Width="32" HorizontalAlignment="Left"/>
+								<TextBlock Text="Qty Precision" Grid.Row="9" />
+								<ComboBox Grid.Column="1" Grid.Row="9" Width="150" HorizontalAlignment="Left" Margin="5,0,0,0" >
+									<ComboBoxItem Content="Maximum" IsSelected="True"/>
+									<ComboBoxItem Content="0" />
+									<ComboBoxItem Content="1" />
+									<ComboBoxItem Content="2" />
+									<ComboBoxItem Content="3" />
+								</ComboBox>
+								
+								<CheckBox Grid.Row="10" Margin="10">Reinvests Dividends</CheckBox>
+								<CheckBox Grid.Row="10" Grid.Column="1" Margin="10">Average Cost</CheckBox>
+							</Grid>
+						</TabItem>
+						<TabItem Header="Income">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+								<TextBlock Text="Bond Type" />
+								<ComboBox Grid.Column="1" Width="75" HorizontalAlignment="Left" Margin="5,0,0,0" >
+									<ComboBoxItem Content="no" IsSelected="True"/>
+									<ComboBoxItem Content="yes" />
+								</ComboBox>
+
+								<CheckBox Grid.Row="1" >Variable Rate Security</CheckBox>
+
+								<TextBlock Text="Coupon and Interest" Grid.Row="3" Margin="0,10,0,0" FontFamily="/SeattleSlewSketch_Ribbon.Screens;component/Fonts/#Apex Rounded Medium" />
+								<TextBlock Text="Frequency" Grid.Row="4" />
+								<ComboBox Grid.Column="1" Grid.Row="4" Width="75" HorizontalAlignment="Left" Margin="5,0,0,0" >
+									<ComboBoxItem Content="Semiannual" IsSelected="True"/>
+									<ComboBoxItem Content="Annual" />
+									<ComboBoxItem Content="Semiannual" />
+									<ComboBoxItem Content="Quarterly" />
+									<ComboBoxItem Content="Monthly" />
+								</ComboBox>
+
+								<TextBlock Text="Accrual Calendar" Grid.Row="5" IsEnabled="False"/>
+								<ComboBox Grid.Column="1" Grid.Row="5" Width="150" HorizontalAlignment="Left" Margin="5,0,0,0" IsEnabled="False">
+									<ComboBoxItem Content="30/360" />
+								</ComboBox>
+
+								<TextBlock Text="Coupon Delay" Grid.Row="6" IsEnabled="False"/>
+								<TextBox Text="0" Grid.Row="6" Grid.Column="1" IsEnabled="False" />
+
+								<CheckBox Grid.Row="7" IsEnabled="False">Pays on Month End</CheckBox>
+
+								<CheckBox Grid.Row="7" Grid.Column="1" IsEnabled="False" >Trade with Accrued Interest</CheckBox>
+
+								<CheckBox Grid.Row="8" IsEnabled="False">Zero Coupone</CheckBox>
+
+								<TextBlock Text="Amortization" Grid.Row="9" Margin="0,10,0,0" FontFamily="/SeattleSlewSketch_Ribbon.Screens;component/Fonts/#Apex Rounded Medium" />
+								<ComboBox Grid.Column="1" Grid.Row="4" Width="75" HorizontalAlignment="Left" Margin="5,0,0,0" IsEnabled="False" >
+									<ComboBoxItem Content="Semiannual" IsSelected="True"/>
+									<ComboBoxItem Content="Annual" />
+									<ComboBoxItem Content="Semiannual" />
+									<ComboBoxItem Content="Quarterly" />
+									<ComboBoxItem Content="Monthly" />
+								</ComboBox>
+
+								<TextBlock Text="Amortize to Call" Grid.Row="10" IsEnabled="False"/>
+								<ComboBox Grid.Column="1" Grid.Row="10" Width="75" HorizontalAlignment="Left" Margin="5,0,0,0" IsEnabled="False" >
+									<ComboBoxItem Content="Never Amortize" IsSelected="True" IsEnabled="False"/>
+								</ComboBox>
+								
+								<TextBlock Text="Amortization Method" Grid.Row="11" IsEnabled="False" />
+								<ComboBox Grid.Column="1" Grid.Row="11" Width="75" HorizontalAlignment="Left" Margin="5,0,0,0" IsEnabled="False">
+									<ComboBoxItem Content="Do Not Calculate" IsSelected="True"/>
+								</ComboBox>
+
+								<TextBlock Text="Yield" Grid.Row="12" Margin="0,10,0,0" FontFamily="/SeattleSlewSketch_Ribbon.Screens;component/Fonts/#Apex Rounded Medium" />
+								<CheckBox Grid.Row="13" IsEnabled="False">Trade with Accrued Interest</CheckBox>
+								<CheckBox Grid.Row="13" Grid.Column="1" IsEnabled="False" >Trade with Accrued Interest</CheckBox>
+							</Grid>
+						</TabItem>
+						<TabItem Header="Reports" >
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+								<TextBlock Text="Report Features" FontFamily="/SeattleSlewSketch_Ribbon.Screens;component/Fonts/#Apex Rounded Medium" />
+								<TextBlock Text="Gain Classification" Grid.Row="1"/>
+								<ComboBox Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Stretch" Margin="5,0,0,0" >
+									<ComboBoxItem Content="Normal" IsSelected="True"/>
+								</ComboBox>
+								<TextBlock Text="Holding Period" Grid.Row="2"/>
+								<TextBox Grid.Row="2" Grid.Column="1" Text="12" Width="50" HorizontalAlignment="Left"/>
+								<TextBlock Text="Risk Country" Grid.Row="3"/>
+								<ComboBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Stretch" Margin="5,0,0,0" >
+									<ComboBoxItem Content="United States" />
+									<ComboBoxItem Content="Canada" />
+									<ComboBoxItem Content="Euro" />
+								</ComboBox>
+								<TextBlock Text="Asset Class" Grid.Row="4"/>
+								<ComboBox Grid.Column="1" Grid.Row="4" HorizontalAlignment="Stretch" Margin="5,0,0,0" >
+									<ComboBoxItem Content="Equities" IsSelected="True"/>
+								</ComboBox>
+
+								<CheckBox Grid.Row="5" IsEnabled="False" >Short Variation</CheckBox>
+								<CheckBox Grid.Row="5" Grid.Column="1" IsChecked="True" >Subject to Federal Tax</CheckBox>
+								<CheckBox Grid.Row="6" Grid.Column="1" IsChecked="True">Subject to State Tax</CheckBox>
+
+								<TextBlock Grid.Row="7" Margin="0,10,0,0" Text="Report Features" FontFamily="/SeattleSlewSketch_Ribbon.Screens;component/Fonts/#Apex Rounded Medium" />
+								<TextBlock Text="Show on Reports" Grid.Row="8"/>
+								<ComboBox Grid.Column="1" Grid.Row="8" HorizontalAlignment="Stretch" Margin="5,0,0,0" >
+									<ComboBoxItem Content="yes" IsSelected="True"/>
+									<ComboBoxItem Content="no" />
+									<ComboBoxItem Content="Unsupervised" />
+								</ComboBox>
+
+								<TextBlock Text="Decimals in Quantity" Grid.Row="9"/>
+								<xctk:IntegerUpDown Grid.Column="1" Grid.Row="9" Width="50" HorizontalAlignment="Left" Maximum="7" Text="3"/>
+
+								<TextBlock Text="Security Type Group" Grid.Row="10"/>
+								<ComboBox Grid.Column="1" Grid.Row="10" HorizontalAlignment="Stretch" Margin="5,0,0,0" >
+									<ComboBoxItem Content="US Securities"/>
+									<ComboBoxItem Content="Euro" />
+									<ComboBoxItem Content="Canadian Securities" />
+								</ComboBox>
+								<CheckBox Grid.Row="11">Show Industry Sectors</CheckBox>
+								<CheckBox Grid.Row="11" Grid.Column="1">Show Industry Groups</CheckBox>
+
+								<TextBlock Grid.Row="13" Margin="0,10,0,0" Text="Pricing" FontFamily="/SeattleSlewSketch_Ribbon.Screens;component/Fonts/#Apex Rounded Medium" />
+								<TextBlock Text="Valuation Factor" Grid.Row="14"/>
+								<ComboBox Grid.Column="1" Grid.Row="10" HorizontalAlignment="Stretch" Margin="5,0,0,0" >
+									<ComboBoxItem Content="1" IsSelected="True"/>
+									<ComboBoxItem Content="-1 &lt;Security Information&gt;" />
+									<ComboBoxItem Content="0" />
+									<ComboBoxItem Content="0.01" />
+									<ComboBoxItem Content="1" />
+									<ComboBoxItem Content="100" />
+								</ComboBox>
+
+								<TextBlock Text="Price Code 1" Grid.Row="15"/>
+								<TextBox Text="E" Grid.Row="15" Grid.Column="1" />
+								<TextBlock Text="Price Code 2" Grid.Row="16"/>
+								<TextBox Text="n" Grid.Row="16" Grid.Column="1" />
+								<TextBlock Text="Price Code 3" Grid.Row="17"/>
+								<TextBox Text="n" Grid.Row="17" Grid.Column="1" />
+							</Grid>
+						</TabItem>
+					</TabControl>
+				</HeaderedContentControl>
+			</s:NavigationPaneExpander>
+		</DockPanel>
+	</Grid>
+</UserControl>

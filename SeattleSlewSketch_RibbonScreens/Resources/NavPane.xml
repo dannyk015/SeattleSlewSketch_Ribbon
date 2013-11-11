@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+	<workflow>
+		<section name="ALL">
+			<subsection name="PORTFOLIO" />
+			<subsection name="PERFORMANCE" />
+			<subsection name="INFORMATION" />
+			<subsection name="REPORTS" />
+		</section>
+		<section name="PORTFOLIO">
+			<subsection name="Portfolios" />
+			<subsection name="Groups" />
+			<subsection name="Composites" />
+			<subsection name="Statements" />
+	 	</section>
+		<section name="PERFORMANCE">
+			<subsection name="Performance Gross of Fees (.PBF)" />
+			<subsection name="Performance Net of Fees (.PRF)" />
+			<subsection name="Index (.DEX)" />
+		</section>
+		<section name="INFORMATION">
+			<subsection name="Securities" />
+			<subsection name="Security Type" />
+		</section>
+		<section name="REPORTS">
+			<subsection name="Appraisal" />
+			<subsection name="Summary" />
+		</section>
+	</workflow>

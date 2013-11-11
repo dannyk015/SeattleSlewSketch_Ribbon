@@ -1,0 +1,171 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:r="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity" 
+	x:Name="MainWindow"
+	mc:Ignorable="d"
+	x:Class="SeattleSlewSketch_RibbonScreens.ReportContext"
+	Width="Auto" Height="Auto">
+
+	<Grid x:Name="LayoutRoot" Background="White">
+		<r:Ribbon FontFamily="/SeattleSlewSketch_Ribbon.Screens;component/Fonts/#Apex Rounded Book">
+			<r:Ribbon.QuickAccessToolBar>
+				<r:RibbonQuickAccessToolBar>
+					<r:RibbonButton x:Name="QATSave" SmallImageSource="Resources/save_32.png" />
+				</r:RibbonQuickAccessToolBar>
+			</r:Ribbon.QuickAccessToolBar>
+			<r:Ribbon.ApplicationMenu>
+				<r:RibbonApplicationMenu>
+					<r:RibbonApplicationMenuItem Header="New" ImageSource="Resources/new_32.png" >
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.MasterPage" />
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</r:RibbonApplicationMenuItem>
+					<r:RibbonApplicationMenuItem Header="Open" ImageSource="Resources/open_32.png" />
+					<r:RibbonApplicationMenuItem Header="Close" ImageSource="Resources/close_32.PNG">
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Start_1" />
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</r:RibbonApplicationMenuItem>
+					<r:RibbonApplicationMenuItem Header="Save" ImageSource="Resources/save_32.png" />
+					<r:RibbonApplicationMenuItem Header="Save As" ImageSource="Resources/save_as_32.png" />
+					<r:RibbonApplicationMenuItem Header="Recent">
+						<r:RibbonApplicationMenuItem Header="case_appraisal.rpd" />
+						<r:RibbonApplicationMenuItem Header="case_appraisal.rmf" />
+						<r:RibbonApplicationMenuItem Header="default.mpd" />
+					</r:RibbonApplicationMenuItem>
+					<r:RibbonApplicationMenuItem Header="Print" ImageSource="Resources/print_32.PNG">
+						<r:RibbonApplicationMenuItem Header="Print" ImageSource="Resources/print_32.PNG" />
+						<r:RibbonApplicationMenuItem Header="Print Preview" ImageSource="Resources/print_preview_32.png" />
+						<r:RibbonApplicationMenuItem Header="Print Setup" ImageSource="Resources/print_setup_32.png" />
+						<r:RibbonApplicationMenuItem Header="Page Setup" ImageSource="Resources/page_setup_32.png" />
+					</r:RibbonApplicationMenuItem>
+					<r:RibbonApplicationMenuItem Header="Help"/>
+					<r:RibbonApplicationMenuItem Header="Options" ImageSource="Resources/options_32.png" >
+						<r:RibbonApplicationMenuItem Header="Application Options" >
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Options_Dialog" />
+								</i:EventTrigger>
+							</i:Interaction.Triggers>														
+						</r:RibbonApplicationMenuItem>
+						<r:RibbonApplicationMenuItem Header="Edit Custom Report Menu" >
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.CustomReportsMenu" />
+								</i:EventTrigger>
+							</i:Interaction.Triggers>														
+						</r:RibbonApplicationMenuItem>
+					</r:RibbonApplicationMenuItem>
+					<r:RibbonApplicationMenuItem Header="Exit" ImageSource="Resources/close_32.PNG" />
+				</r:RibbonApplicationMenu>
+			</r:Ribbon.ApplicationMenu>
+			<r:RibbonTab Header="HOME" IsSelected="True">
+				<r:RibbonGroup Header="Clipboard">
+					<r:RibbonSplitButton Label="Paste" LargeImageSource="Resources/paste_32.PNG" >
+						<r:RibbonSplitMenuItem Header="Paste Special" />
+					</r:RibbonSplitButton>
+					<r:RibbonButton Label="Cut" SmallImageSource="Resources/cut.png"/>
+					<r:RibbonButton Label="Copy" SmallImageSource="Resources/copy.png"/>
+				</r:RibbonGroup>
+				<r:RibbonGroup Header="Editing">
+					<r:RibbonButton Label="Find" LargeImageSource="Resources/find_32.PNG" />
+					<r:RibbonButton Label="Edit Report Styles" LargeImageSource="Resources/report_styles_32.png"/>
+					<r:RibbonButton Label="Lock Object" SmallImageSource="Resources/lock_headers.PNG" />
+					<r:RibbonButton Label="Unlock Object" SmallImageSource="Resources/lock_headers.PNG" />
+					<r:RibbonButton Label="Properties" SmallImageSource="Resources/zoom_in_32.PNG" />
+					<r:RibbonButton Label="Links" SmallImageSource="Resources/zoom_in_32.PNG" />
+					<r:RibbonButton Label="Object" SmallImageSource="Resources/font_32.png"/>
+				</r:RibbonGroup>
+			</r:RibbonTab>
+			<r:RibbonTab Header="VIEW" >
+				<r:RibbonGroup Header="View">
+					<r:RibbonMenuButton Label="Layout" LargeImageSource="Resources/layout_32.PNG">
+						<r:RibbonMenuItem Header="Normal" ImageSource="Resources/zoom_in_32.PNG" />
+						<r:RibbonMenuItem Header="Page Layout" ImageSource="Resources/zoom_in_32.PNG" />
+						<r:RibbonMenuItem Header="Two Page" ImageSource="Resources/font_32.png"/>						
+					</r:RibbonMenuButton>
+					<r:RibbonButton Label="Show Reports" LargeImageSource="Resources/show_reports.PNG"/>
+					<r:RibbonButton Label="Show Charts" LargeImageSource="Resources/show_charts.png"/>
+					<r:RibbonButton Label="Show Reports &amp; Charts" SmallImageSource="Resources/show_charts.PNG"/>
+					<r:RibbonButton Label="Excel Spreadsheet" SmallImageSource="Resources/excel_spreadsheet_32.PNG"/>
+					<r:RibbonButton Label="Lock Headers" SmallImageSource="Resources/lock_headers.PNG"/>
+				</r:RibbonGroup>
+				<r:RibbonGroup Header="Zoom">
+					<r:RibbonButton Label="Zoom In" LargeImageSource="Resources/zoom_in_32.png" />
+					<r:RibbonButton Label="Zoom Out" LargeImageSource="Resources/zoom_out_32.png" />
+				</r:RibbonGroup>
+				<r:RibbonGroup Header="Window">
+					<r:RibbonButton Label="Arrange All" LargeImageSource="Resources/arrange_all.png" />
+					<r:RibbonButton Label="View Side by Side" SmallImageSource="Resources/side_by_side.png"/>
+					<r:RibbonButton Label="Reset Window Position" SmallImageSource="Resources/reset_window_position.png"/>
+					<r:RibbonMenuButton Label="Switch Windows" LargeImageSource="Resources/switch_windows.png">
+						<r:RibbonMenuItem Header="1 Report - Appraisal" />
+						<r:RibbonMenuItem Header="2 Report - Performance History" />
+						<r:RibbonMenuItem Header="3 Report - Summary" />
+					</r:RibbonMenuButton>
+				</r:RibbonGroup>
+			</r:RibbonTab>
+			<r:RibbonTab Header="INSERT" >
+				<r:RibbonGroup Header="Page Setup">
+					<r:RibbonButton Label="Page Numbers" SmallImageSource="Resources/page_number_32.png" LargeImageSource="Resources/page_number_32.png" />
+					<r:RibbonButton Label="Time &amp; Date" SmallImageSource="Resources/date_time_16.png" LargeImageSource="Resources/date_time_16.png"/>
+				</r:RibbonGroup>
+				<r:RibbonGroup Header="Master Page">
+					<r:RibbonButton Label="Picture" SmallImageSource="Resources/picture_32.png" LargeImageSource="Resources/picture_32.png" IsEnabled="False" />
+					<r:RibbonButton Label="Object" SmallImageSource="Resources/object_32.png" LargeImageSource="Resources/object_32.png" IsEnabled="False" />
+					<r:RibbonButton Label="Chart Frame" SmallImageSource="Resources/font_32.png" IsEnabled="False" />
+					<r:RibbonButton Label="Report Frame" SmallImageSource="Resources/font_32.png" IsEnabled="False" />
+				</r:RibbonGroup>
+				<r:RibbonGroup Header="Macro">
+					<r:RibbonButton Label="Page" LargeImageSource="Resources/new_32.png" SmallImageSource="Resources/new_32.png" IsEnabled="False"/>
+				</r:RibbonGroup>
+			</r:RibbonTab>
+			<r:RibbonTab Header="REPORTS">
+				<r:RibbonGroup Header="Reports">
+					<r:RibbonMenuButton Label="Portfolio" LargeImageSource="Resources/report_styles_32.PNG" >
+						<r:RibbonMenuItem Header="Appraisal">
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Report"/>
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+						</r:RibbonMenuItem>
+					</r:RibbonMenuButton>
+					<r:RibbonMenuButton Label="Management" LargeImageSource="Resources/report_styles_32.PNG" />
+					<r:RibbonMenuButton Label="Fixed" LargeImageSource="Resources/report_styles_32.PNG" />
+					<r:RibbonMenuButton Label="Performance" LargeImageSource="Resources/report_styles_32.PNG" />
+					<r:RibbonMenuButton Label="Custom" LargeImageSource="Resources/report_styles_32.PNG" >
+						<r:RibbonMenuItem Header="Custom Report 1"/>
+						<r:RibbonMenuItem Header="Custom Report 2"/>
+						<r:RibbonMenuItem Header="Custom Report 3"/>
+					</r:RibbonMenuButton>
+					<r:RibbonButton Label="Run Last" LargeImageSource="Resources/run_last_32.PNG"/>
+				</r:RibbonGroup>
+				<r:RibbonGroup>
+				<r:RibbonMenuButton Label="Macro" LargeImageSource="Resources/macro_32.PNG" >
+					<r:RibbonMenuItem Header="Run..." />
+					<r:RibbonMenuItem Header="Run Last" />
+					<r:RibbonSeparator />
+					<r:RibbonMenuItem Header="New" />
+					<r:RibbonMenuItem Header="Open" >
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="MouseLeftButtonDown">
+								<pi:NavigateToScreenAction TargetScreen="SeattleSlewSketch_RibbonScreens.Macro"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</r:RibbonMenuItem>
+				</r:RibbonMenuButton>
+				<r:RibbonButton Label="Edit Report Styles" LargeImageSource="Resources/report_styles_32.PNG" />
+				</r:RibbonGroup>
+			</r:RibbonTab>
+		</r:Ribbon>
+	</Grid>
+</UserControl>

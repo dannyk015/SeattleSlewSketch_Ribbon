@@ -1,0 +1,13 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="SeattleSlewSketch_RibbonScreens_Network_Settings_Name"
+	mc:Ignorable="d"
+	x:Class="SeattleSlewSketch_RibbonScreens.Network_Settings"
+	Width="Auto" Height="Auto">
+
+	<Grid x:Name="LayoutRoot" Background="White">
+		<Image Source="Resources/Network_Settings.png"/>
+	</Grid>
+</UserControl>

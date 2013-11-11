@@ -1,0 +1,40 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:SeattleSlewSketch_RibbonScreens" x:Name="SeattleSlewSketch_RibbonScreens_Start_Name"
+	xmlns:nav="NavigationPane" 
+	mc:Ignorable="d"
+	x:Class="SeattleSlewSketch_RibbonScreens.Start"
+	Width="Auto" Height="Auto">
+
+	<UserControl.Resources>
+		<XmlDataProvider x:Key="XMLFile1DataSource" Source="NavPane.xml"/>
+		<DataTemplate x:Key="DataTemplate1">
+			<TextBlock Text="{Binding XPath=@name}"></TextBlock>
+		</DataTemplate>
+		<DataTemplate x:Key="DataTemplate2">
+				<StackPanel>
+					<TreeView>
+						<TreeViewItem Header="{Binding XPath=@name}" ItemsSource="{Binding XPath=subsection}" ItemTemplate="{DynamicResource DataTemplate3}">
+						</TreeViewItem>
+					</TreeView>
+				</StackPanel>
+		</DataTemplate>
+		<DataTemplate x:Key="DataTemplate3">
+			<TextBlock Text="{Binding XPath=@name}"/>
+		</DataTemplate>
+	</UserControl.Resources>
+
+	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource XMLFile1DataSource}}" >
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<TextBox Text="Search" Margin="5"/>
+		<nav:NavigationPane Grid.Row="1" ItemsSource="{Binding XPath=/workflow/section}"
+				ItemTemplate="{DynamicResource DataTemplate1}"
+				ContentTemplate="{DynamicResource DataTemplate2}">
+		</nav:NavigationPane>
+	</Grid>
+</UserControl>

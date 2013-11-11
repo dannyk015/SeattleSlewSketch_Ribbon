@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5513e8d8-2ef2-4bc5-9573-98eaf158747c}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeattleSlewSketch_RibbonScreens</RootNamespace>
+    <AssemblyName>SeattleSlewSketch_Ribbon.Screens</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ImagePackage">
+      <HintPath>..\..\..\..\..\..\..\..\..\Desktop\DataGridToolKit\ImagePackage.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Prototyping.MockupsWPF">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\..\Program Files %28x86%29\Microsoft SDKs\Expression\Blend 4 Sketch Mockups\.NETFramework\v4.0\Libraries\Microsoft.Expression.Prototyping.MockupsWPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel" />
+    <Reference Include="Microsoft.Windows.Shell" />
+    <Reference Include="MultiEventCommandBinder">
+      <HintPath>..\..\..\..\..\..\..\..\..\Desktop\DataGridToolKit\MultiEventCommandBinder.dll</HintPath>
+    </Reference>
+    <Reference Include="NavigationPane">
+      <HintPath>..\..\..\..\..\..\..\..\..\Desktop\Release 1.0\Bin\Release\NavigationPane.dll</HintPath>
+    </Reference>
+    <Reference Include="Office" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="RibbonControlsLibrary" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\..\..\..\..\..\..\..\..\Downloads\ExtendedWPFToolkit_Binaries\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup>
+    <ExpressionBlendPrototypingEnabled>true</ExpressionBlendPrototypingEnabled>
+    <ExpressionBlendPrototypeHarness>false</ExpressionBlendPrototypeHarness>
+  </PropertyGroup>
+  <ItemGroup>
+    <!--Reference Include="PresentationFramework.Aero" /-->
+    <Reference Include="System.Windows.Interactivity" />
+    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="Microsoft.Expression.Prototyping.Interactivity" />
+    <Reference Include="Microsoft.Expression.Prototyping.Runtime" />
+    <Reference Include="Microsoft.Expression.Prototyping.SketchControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Blotter.xaml.cs">
+      <DependentUpon>Blotter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BlotterRibbon.xaml.cs">
+      <DependentUpon>BlotterRibbon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Composite.xaml.cs">
+      <DependentUpon>Composite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CompositeRibbon.xaml.cs">
+      <DependentUpon>CompositeRibbon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Create_Composite.xaml.cs">
+      <DependentUpon>Create_Composite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Create_Gross_Performance.xaml.cs">
+      <DependentUpon>Create_Gross_Performance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Create_Group.xaml.cs">
+      <DependentUpon>Create_Group.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Create_Net_Performance.xaml.cs">
+      <DependentUpon>Create_Net_Performance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Create_Portfolio.xaml.cs">
+      <DependentUpon>Create_Portfolio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Create_Portfolio_Template.xaml.cs">
+      <DependentUpon>Create_Portfolio_Template.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Create_Template.xaml.cs">
+      <DependentUpon>Create_Template.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomReportsMenu.xaml.cs">
+      <DependentUpon>CustomReportsMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_NavPane.xaml.cs">
+      <DependentUpon>Dialog_NavPane.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="File_Open.xaml.cs">
+      <DependentUpon>File_Open.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gross_Performance.xaml.cs">
+      <DependentUpon>Gross_Performance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Group.xaml.cs">
+      <DependentUpon>Group.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupRibbon.xaml.cs">
+      <DependentUpon>GroupRibbon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Macro.xaml.cs">
+      <DependentUpon>Macro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MacroContext.xaml.cs">
+      <DependentUpon>MacroContext.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterContext.xaml.cs">
+      <DependentUpon>MasterContext.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.xaml.cs">
+      <DependentUpon>MasterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Network_Settings.xaml.cs">
+      <DependentUpon>Network_Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Net_Performance.xaml.cs">
+      <DependentUpon>Net_Performance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Options_Dialog.xaml.cs">
+      <DependentUpon>Options_Dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Portfolio.xaml.cs">
+      <DependentUpon>Portfolio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PortfolioRibbon.xaml.cs">
+      <DependentUpon>PortfolioRibbon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report.xaml.cs">
+      <DependentUpon>Report.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportContext.xaml.cs">
+      <DependentUpon>ReportContext.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\CompositeMemberSampleDataSource\CompositeMemberSampleDataSource.xaml.cs">
+      <DependentUpon>CompositeMemberSampleDataSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\CustomReportsSampleDataSource\CustomReportsSampleDataSource.xaml.cs">
+      <DependentUpon>CustomReportsSampleDataSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\GroupMemberSampleDataSource\GroupMemberSampleDataSource.xaml.cs">
+      <DependentUpon>GroupMemberSampleDataSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\PortfolioAccessData\PortfolioAccessData.xaml.cs">
+      <DependentUpon>PortfolioAccessData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\ScriptsSampleDataSource\ScriptsSampleDataSource.xaml.cs">
+      <DependentUpon>ScriptsSampleDataSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\SecurityMaster\SecurityMaster.xaml.cs">
+      <DependentUpon>SecurityMaster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\SecurityType\SecurityType.xaml.cs">
+      <DependentUpon>SecurityType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\tradeblotterSampleDataSource\tradeblotterSampleDataSource.xaml.cs">
+      <DependentUpon>tradeblotterSampleDataSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\UserGroupMemberSampleDataSource\UserGroupMemberSampleDataSource.xaml.cs">
+      <DependentUpon>UserGroupMemberSampleDataSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\UserGroupsSampleDataSource\UserGroupsSampleDataSource.xaml.cs">
+      <DependentUpon>UserGroupsSampleDataSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainRibbon.xaml.cs">
+      <DependentUpon>MainRibbon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavPane.xaml.cs">
+      <DependentUpon>NavPane.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts.xaml.cs">
+      <DependentUpon>Scripts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Securities.xaml.cs">
+      <DependentUpon>Securities.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Security_Type.xaml.cs">
+      <DependentUpon>Security_Type.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Start_1.xaml.cs">
+      <DependentUpon>Start_1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="System_Settings.xaml.cs">
+      <DependentUpon>System_Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Administration.xaml.cs">
+      <DependentUpon>User_Administration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Detail.xaml.cs">
+      <DependentUpon>User_Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Group_Detail.xaml.cs">
+      <DependentUpon>User_Group_Detail.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Blotter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BlotterRibbon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Composite.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CompositeRibbon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Create_Composite.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Create_Gross_Performance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Create_Group.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Create_Net_Performance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Create_Portfolio.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Create_Portfolio_Template.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Create_Template.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomReportsMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialog_NavPane.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="File_Open.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gross_Performance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Group.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GroupRibbon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Macro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MacroContext.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterContext.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Network_Settings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Net_Performance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Options_Dialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Portfolio.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PortfolioRibbon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProjectDataSources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDataSources>True</ContainsDataSources>
+    </Page>
+    <Page Include="Report.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ReportContext.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\CompositeMemberSampleDataSource\CompositeMemberSampleDataSource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\CustomReportsSampleDataSource\CustomReportsSampleDataSource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\GroupMemberSampleDataSource\GroupMemberSampleDataSource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\PortfolioAccessData\PortfolioAccessData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\ScriptsSampleDataSource\ScriptsSampleDataSource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\SecurityMaster\SecurityMaster.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\SecurityType\SecurityType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\tradeblotterSampleDataSource\tradeblotterSampleDataSource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\UserGroupMemberSampleDataSource\UserGroupMemberSampleDataSource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\UserGroupsSampleDataSource\UserGroupsSampleDataSource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainRibbon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Scripts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SeattleSlewStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Securities.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Security_Type.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Simple Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SketchStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NavPane.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Start_1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="System_Settings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User_Administration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User_Detail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User_Group_Detail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="Fonts\ApexRounded-Bold.ttf" />
+    <Resource Include="Fonts\ApexRounded-BoldItalic.ttf" />
+    <Resource Include="Fonts\ApexRounded-Book.ttf" />
+    <Resource Include="Fonts\ApexRounded-BookItalic.ttf" />
+    <Resource Include="Fonts\ApexRounded-Medium.ttf" />
+    <Resource Include="Fonts\ApexRounded-MediumItalic.ttf" />
+    <Resource Include="Fonts\BuxtonSketch.ttf" />
+    <Resource Include="Fonts\SketchFlow Print.ttf" />
+    <Resource Include="Fonts\SegoeMarker.ttf" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Properties\Version.cs">
+      <Link>Properties\Version.cs</Link>
+    </Compile>
+    <Resource Include="Resources\activex_audit.png" />
+    <Resource Include="Resources\activex_blotter.png" />
+    <Resource Include="Resources\activex_cpg.png" />
+    <Resource Include="Resources\activex_deleted.png" />
+    <Resource Include="Resources\activex_grp.png" />
+    <Resource Include="Resources\activex_index.png" />
+    <Resource Include="Resources\activex_perf.png" />
+    <Resource Include="Resources\activex_portfolio.png" />
+    <Resource Include="Resources\activex_region.png" />
+    <Resource Include="Resources\active_x_Macro.png" />
+    <Resource Include="Resources\add.png" />
+    <Resource Include="Resources\arrange_all.png" />
+    <Resource Include="Resources\arrow_left.png" />
+    <Resource Include="Resources\arrow_right.png" />
+    <Resource Include="Resources\audit_trail_32.png" />
+    <Resource Include="Resources\axys_32.ico" />
+    <Resource Include="Resources\bond.png" />
+    <Resource Include="Resources\bring_forward_32.png" />
+    <Resource Include="Resources\brokerage.png" />
+    <Resource Include="Resources\browse.png" />
+    <Resource Include="Resources\car_rep.png" />
+    <Resource Include="Resources\cash_balance.png" />
+    <Resource Include="Resources\classification_32.png" />
+    <Resource Include="Resources\cli.png" />
+    <Resource Include="Resources\close_32.PNG" />
+    <Resource Include="Resources\close_blotter.PNG" />
+    <Resource Include="Resources\close_portfolio_32.PNG" />
+    <Resource Include="Resources\close_report_32.PNG" />
+    <Resource Include="Resources\commission_purpose.png" />
+    <Resource Include="Resources\composites.png" />
+    <Resource Include="Resources\composites_32.png" />
+    <Resource Include="Resources\condense.PNG" />
+    <Resource Include="Resources\copy-dkim.PNG" />
+    <Resource Include="Resources\copy.PNG" />
+    <Resource Include="Resources\copy_32.PNG" />
+    <Resource Include="Resources\country.png" />
+    <Resource Include="Resources\coupon_dates.PNG" />
+    <Resource Include="Resources\create_reeorg_transactions.png" />
+    <Resource Include="Resources\currency.png" />
+    <Resource Include="Resources\custom_32.png" />
+    <Resource Include="Resources\cut-dkim.PNG" />
+    <Resource Include="Resources\cut.PNG" />
+    <Resource Include="Resources\date_time_16.png" />
+    <Resource Include="Resources\delete.png" />
+    <Resource Include="Resources\delete_32.png" />
+    <Resource Include="Resources\delete_composites_32.png" />
+    <Resource Include="Resources\delete_group_32.png" />
+    <Resource Include="Resources\delete_portfolio_32.png" />
+    <Resource Include="Resources\delete_price_32.PNG" />
+    <Resource Include="Resources\edit_price_symbol.png" />
+    <Resource Include="Resources\edit_security_user_defined.png" />
+    <Resource Include="Resources\edit_trade_blotter_32.png" />
+    <Resource Include="Resources\edit_transaction_user_defined.png" />
+    <Resource Include="Resources\excel_spreadsheet_32.PNG" />
+    <Resource Include="Resources\exchange.png" />
+    <Resource Include="Resources\export_32.png" />
+    <Resource Include="Resources\factors.png" />
+    <Resource Include="Resources\find_32.PNG" />
+    <Resource Include="Resources\fixed_income.png" />
+    <Resource Include="Resources\font_32.png" />
+    <Resource Include="Resources\fx_32.png" />
+    <Resource Include="Resources\go_to.png" />
+    <Resource Include="Resources\go_to_32.PNG" />
+    <Resource Include="Resources\groups.png" />
+    <Resource Include="Resources\group_128.PNG" />
+    <Resource Include="Resources\group_32.png" />
+    <Resource Include="Resources\holiday.png" />
+    <Resource Include="Resources\holiday_schedule.PNG" />
+    <Resource Include="Resources\import_32.png" />
+    <Resource Include="Resources\index.png" />
+    <Resource Include="Resources\insert.PNG" />
+    <Resource Include="Resources\insert_32.PNG" />
+    <Resource Include="Resources\label.PNG" />
+    <Resource Include="Resources\layout_32.PNG" />
+    <Resource Include="Resources\links_32.png" />
+    <Resource Include="Resources\list_missing_data.PNG" />
+    <Resource Include="Resources\lock_headers.PNG" />
+    <Resource Include="Resources\lot_location.PNG" />
+    <Resource Include="Resources\macro_32.png" />
+    <Resource Include="Resources\management_32.PNG" />
+    <Resource Include="Resources\master.png" />
+    <Resource Include="Resources\merge.png" />
+    <Resource Include="Resources\moxy_32.png" />
+    <Resource Include="Resources\NavPane.xml">
+      <Link>NavPane.xml</Link>
+    </Resource>
+    <DesignTimeOnly Include="SampleData\UserGroupsSampleDataSource\UserGroupsSampleDataSource.xsd" />
+    <Resource Include="Resources\network_settings.png" />
+    <Resource Include="Resources\new_32.png" />
+    <Resource Include="Resources\next_32.PNG" />
+    <Resource Include="Resources\object_32.png" />
+    <Resource Include="Resources\open_32.png" />
+    <Resource Include="Resources\options_32.PNG" />
+    <Resource Include="Resources\page_number_32.png" />
+    <Resource Include="Resources\page_setup_32.png" />
+    <Resource Include="Resources\paste_32.PNG" />
+    <Resource Include="Resources\performance.png" />
+    <Resource Include="Resources\performance_32.png" />
+    <Resource Include="Resources\performance_gross.png" />
+    <Resource Include="Resources\picture_32.png" />
+    <Resource Include="Resources\portfolios_32.png" />
+    <Resource Include="Resources\portfolio_128.PNG" />
+    <Resource Include="Resources\portfolio_group-dkim.PNG" />
+    <Resource Include="Resources\portfolio_group.PNG" />
+    <Resource Include="Resources\post_hold_32.PNG" />
+    <Resource Include="Resources\post_trade_blotter_32.png" />
+    <Resource Include="Resources\previous_32.PNG" />
+    <Resource Include="Resources\price_128.PNG" />
+    <Resource Include="Resources\price_32.PNG" />
+    <Resource Include="Resources\print_32.PNG" />
+    <Resource Include="Resources\print_preview_32.png" />
+    <Resource Include="Resources\print_setup_32.png" />
+    <Resource Include="Resources\private_128.PNG" />
+    <Resource Include="Resources\public_128.PNG" />
+    <Resource Include="Resources\rate.png" />
+    <Resource Include="Resources\Record-Normal-icon.png" />
+    <Resource Include="Resources\redo.png" />
+    <Resource Include="Resources\rename.png" />
+    <Resource Include="Resources\rename_32.png" />
+    <Resource Include="Resources\replace.png" />
+    <Resource Include="Resources\report_styles_32.png" />
+    <Resource Include="Resources\reset_window_position.png" />
+    <Resource Include="Resources\restore.png" />
+    <Resource Include="Resources\run_last_32.PNG" />
+    <Resource Include="Resources\save_32.png" />
+    <Resource Include="Resources\save_as_32.png" />
+    <Resource Include="Resources\scripts_32.png" />
+    <Resource Include="Resources\security_128.PNG" />
+    <Resource Include="Resources\security_32.png" />
+    <Resource Include="Resources\security_type_32.png" />
+    <Resource Include="Resources\select_all_32.PNG" />
+    <Resource Include="Resources\send_backward_32.png" />
+    <Resource Include="Resources\shared_128.PNG" />
+    <Resource Include="Resources\show_charts.png" />
+    <Resource Include="Resources\show_reports.PNG" />
+    <Resource Include="Resources\side_by_side.png" />
+    <Resource Include="Resources\state.png" />
+    <Resource Include="Resources\statement.png" />
+    <Resource Include="Resources\strategy.png" />
+    <Resource Include="Resources\switch_windows.png" />
+    <Resource Include="Resources\symbol.png" />
+    <Resource Include="Resources\System_Settings.png" />
+    <Resource Include="Resources\system_settings_32.png" />
+    <Resource Include="Resources\undo.png" />
+    <Resource Include="Resources\validate.png" />
+    <Resource Include="Resources\zoom_detail.png" />
+    <Resource Include="Resources\zoom_in_32.PNG" />
+    <Resource Include="Resources\zoom_out_32.PNG" />
+    <DesignTimeOnly Include="SampleData\GroupMemberSampleDataSource\GroupMemberSampleDataSource.xsd" />
+    <DesignTimeOnly Include="SampleData\CompositeMemberSampleDataSource\CompositeMemberSampleDataSource.xsd" />
+    <DesignTimeOnly Include="SampleData\UserGroupMemberSampleDataSource\UserGroupMemberSampleDataSource.xsd" />
+    <DesignTimeOnly Include="SampleData\SecurityMaster\SecurityMaster.xsd" />
+    <DesignTimeOnly Include="SampleData\SecurityType\SecurityType.xsd" />
+    <DesignTimeOnly Include="SampleData\PortfolioAccessData\PortfolioAccessData.xsd" />
+    <DesignTimeOnly Include="SampleData\ScriptsSampleDataSource\ScriptsSampleDataSource.xsd" />
+    <DesignTimeOnly Include="SampleData\CustomReportsSampleDataSource\CustomReportsSampleDataSource.xsd" />
+    <DesignTimeOnly Include="SampleData\tradeblotterSampleDataSource\tradeblotterSampleDataSource.xsd" />
+    <Resource Include="Sketch.Flow" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath32)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	     Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

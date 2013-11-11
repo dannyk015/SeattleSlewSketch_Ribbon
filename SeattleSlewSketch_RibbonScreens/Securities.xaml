@@ -1,0 +1,212 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:local="clr-namespace:SeattleSlewSketch_RibbonScreens" 
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+	xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity" 
+	xmlns:s="NavigationPane" 
+	x:Name="SeattleSlewSketch_RibbonScreens_Blotter_Name"
+	mc:Ignorable="d"
+	x:Class="SeattleSlewSketch_RibbonScreens.Securities"
+	Width="1000" Height="600"
+	FontFamily="/SeattleSlewSketch_Ribbon.Screens;component/Fonts/#Apex Rounded Book" >
+
+	<Grid x:Name="LayoutRoot" Background="White" DataContext="{Binding Source={StaticResource SecurityMaster}}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+		<local:Start HorizontalAlignment="Left" VerticalAlignment="stretch" d:IsPrototypingComposition="True" Grid.RowSpan="2" Grid.Row="1"/>
+		<local:Screen_1 Grid.ColumnSpan="3" d:IsPrototypingComposition="True"/>
+		<Button Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Width="22" Background="{x:Null}" BorderBrush="White" Foreground="#323232" FontFamily="/SeattleSlewSketch_Ribbon.Screens;component/Fonts/#Apex Rounded Bold" Content="X"/>
+
+		<TextBlock Grid.Column="1" Grid.Row="1" Text="SECURITIES" FontSize="20" FontFamily="/SeattleSlewSketch_Ribbon.Screens;component/Fonts/#Apex Rounded Medium" />
+		<DataGrid Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" AutoGenerateColumns="False" ItemsSource="{Binding Data}">
+			<DataGrid.Columns>
+				<DataGridTextColumn Binding="{Binding SecTypeCode}" Header="Type"/>
+				<DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol"/>
+				<DataGridTextColumn Binding="{Binding CUSIP}" Header="CUSIP"/>
+				<DataGridTextColumn Binding="{Binding FullName}" Header="Description"/>
+				<DataGridTextColumn Binding="{Binding AssetClass}" Header="Asset Class"/>
+				<DataGridTextColumn Binding="{Binding UserDef1}" Header="UserDef1"/>
+				<DataGridTextColumn Binding="{Binding UserDef2}" Header="UserDef2"/>
+				<DataGridTextColumn Binding="{Binding UserDef3}" Header="UserDef3"/>
+			</DataGrid.Columns></DataGrid>
+
+		<DockPanel Grid.Column="1" Grid.Row="2"	Grid.RowSpan="2" HorizontalAlignment="Right">
+			<s:NavigationPaneExpander x:Name="navigationPaneExpander"
+				Background="#FFF6F9FF"
+				Width="300"				
+				CloseButtonClick="navigationPaneExpander_CloseButtonClick"
+				DockPanel.Dock="Right"
+				Orientation="Right">
+				<s:NavigationPaneExpander.Header>
+					<TextBlock Foreground="Red" Text="Expander Header" />
+				</s:NavigationPaneExpander.Header>
+				<HeaderedContentControl>
+					<HeaderedContentControl.Header>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14"><Run Text="Details" /></TextBlock>
+						</StackPanel>
+					</HeaderedContentControl.Header>
+					<TabControl>
+						<TabItem Header="Basic">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+								<TextBlock Text="Type" />
+								<ComboBox Grid.Column="1" Width="75" HorizontalAlignment="Left" Margin="5,0,0,0" >
+									<ComboBoxItem Content="abus" />
+									<ComboBoxItem Content="adus" />
+									<ComboBoxItem Content="brus" />
+									<ComboBoxItem Content="caus" />
+									<ComboBoxItem Content="cbus" />
+									<ComboBoxItem Content="csus" IsSelected="True"/>
+									<ComboBoxItem Content="cvus" />
+								</ComboBox>
+								<TextBlock Text="Symbol" Grid.Row="2" />
+								<TextBox Text="advs" Grid.Row="2" Grid.Column="1" Margin="5,0,0,0"/>
+								<TextBlock Text="CUSIP/Other" Grid.Row="3" />
+								<TextBox Text="012345678a" Grid.Row="3" Grid.Column="1" Margin="5,0,0,0"/>
+								<TextBlock Text="Description" Grid.Row="4" />
+								<TextBox Text="ADVENT SOFTWARE, INC." Grid.Row="4" Grid.Column="1" Margin="5,0,0,0"/>
+								<TextBlock Text="Asset Class" Grid.Row="5" />
+								<ComboBox Grid.Column="1" Grid.Row="5" Width="75" HorizontalAlignment="Left" Margin="5,0,0,0" >
+									<ComboBoxItem Content="Use Security Type Information" IsSelected="True"/>
+									<ComboBoxItem Content="Equities" />
+									<ComboBoxItem Content="Cash and Equivalents" />
+									<ComboBoxItem Content="Fixed Income" />
+									<ComboBoxItem Content="Alternatives" />
+								</ComboBox>
+								<TextBlock Text="Industry Group" Grid.Row="6" />
+								<ComboBox Grid.Column="1" Grid.Row="6" Width="150" HorizontalAlignment="Left" Margin="5,0,0,0" >
+									<ComboBoxItem Content="Internet Information Services" />
+									<ComboBoxItem Content="Consumer Goods" />
+								</ComboBox>
+								<TextBlock Text="Industry Sector" Grid.Row="7" />
+								<ComboBox Grid.Column="1" Grid.Row="7" Width="150" HorizontalAlignment="Left" Margin="5,0,0,0" >
+									<ComboBoxItem Content="Agriculture" />
+									<ComboBoxItem Content="Consumer Discretionary" />
+									<ComboBoxItem Content="Consumer Non-Cyclical" />
+									<ComboBoxItem Content="Technology" />
+								</ComboBox>
+								<TextBlock Text="Exchange" Grid.Row="8" />
+								<ComboBox Grid.Column="1" Grid.Row="8" Width="75" HorizontalAlignment="Left" Margin="5,0,0,0" >
+									<ComboBoxItem Content="NYSE" />
+									<ComboBoxItem Content="NASDAQ" />
+								</ComboBox>
+								<TextBlock Text="Risk Country" Grid.Row="9" />
+								<ComboBox Grid.Column="1" Grid.Row="9" Width="150" HorizontalAlignment="Left" Margin="5,0,0,0" >
+									<ComboBoxItem Content="Use Security Type Settings" IsSelected="True"/>
+									<ComboBoxItem Content="Euro" />
+									<ComboBoxItem Content="China" />
+									<ComboBoxItem Content="Canada" />
+									<ComboBoxItem Content="United States" />
+								</ComboBox>
+								<TextBlock Text="Issue Country" Grid.Row="10" />
+								<ComboBox Grid.Column="1" Grid.Row="10" Width="150" HorizontalAlignment="Left" Margin="5,0,0,0" >
+									<ComboBoxItem Content="Use Security Type Settings" IsSelected="True"/>
+									<ComboBoxItem Content="Euro" />
+									<ComboBoxItem Content="China" />
+									<ComboBoxItem Content="Canada" />
+									<ComboBoxItem Content="United States" />
+								</ComboBox>
+							</Grid>
+						</TabItem>
+						<TabItem Header="Equity">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+								<TextBlock Text="Next Payment Date" />
+								<DatePicker Text="03/22/2013" Grid.Column="1" Width="100" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+								<TextBlock Text="Dividend Rate" Grid.Row="2" />
+								<TextBox Text="0.474" Grid.Row="2" Grid.Column="1" Margin="5,0,0,0"/>
+								<TextBlock Text="Payment Frequency" Grid.Row="3" />
+								<ComboBox Grid.Column="1" Grid.Row="3" Width="75" HorizontalAlignment="Left" Margin="5,0,0,0" >
+									<ComboBoxItem Content="Use Security Type Information" IsSelected="True"/>
+									<ComboBoxItem Content="Annual" />
+									<ComboBoxItem Content="Semiannual" />
+									<ComboBoxItem Content="Quarterly" />
+									<ComboBoxItem Content="Monthly" />
+								</ComboBox>
+								<TextBlock Text="S&amp;P Rating" Grid.Row="4" />
+								<TextBox Text="" Grid.Row="4" Grid.Column="1" Margin="5,0,0,0"/>
+								<TextBlock Text="Moody Rating" Grid.Row="5" />
+								<TextBox Text="" Grid.Row="5" Grid.Column="1" Margin="5,0,0,0"/>
+								<TextBlock Text="State" Grid.Row="6" />
+								<ComboBox Grid.Column="1" Grid.Row="6" Width="150" HorizontalAlignment="Left" Margin="5,0,0,0" >
+									<ComboBoxItem Content="Alabama" />
+									<ComboBoxItem Content="Alaska" />
+									<ComboBoxItem Content="Arizona" />
+									<ComboBoxItem Content="Arkansas" />
+									<ComboBoxItem Content="California" />
+									<ComboBoxItem Content="Colorado" />
+									<ComboBoxItem Content="Connecticut" />
+								</ComboBox>
+							</Grid>
+						</TabItem>
+						<TabItem Header="User Defined" >
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+								<TextBlock Text="Security User Defined 1" />
+								<ComboBox Grid.Column="1"  HorizontalAlignment="Stretch" Margin="5,0,0,0" >
+									<ComboBoxItem Content="Some Value" />
+								</ComboBox>
+								<TextBlock Text="Security User Defined 2" Grid.Row="1"/>
+								<ComboBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Margin="5,0,0,0" >
+									<ComboBoxItem Content="Some Value" />
+								</ComboBox>
+								<TextBlock Text="Security User Defined 3" Grid.Row="2"/>
+								<ComboBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Margin="5,0,0,0" >
+									<ComboBoxItem Content="Some Value" />
+								</ComboBox>
+							</Grid>
+						</TabItem>
+					</TabControl>
+				</HeaderedContentControl>
+			</s:NavigationPaneExpander>
+		</DockPanel>
+	</Grid>
+</UserControl>
